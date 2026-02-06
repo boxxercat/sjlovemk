@@ -1,0 +1,29 @@
+# Valentine Mini Web Project PRD
+
+## 1. Project Overview
+A single-page romantic interaction web project for Valentine's Day.
+Target: Girlfriend (Minkyung)
+Goal: Surprise, romantic interaction, and forced "Yes" UX.
+
+## 2. Tech Stack
+- HTML5
+- CSS3 (Flexbox, Animation, Transition)
+- Vanilla JavaScript (ES6)
+- Responsive Web Design
+
+## 3. Key Features
+- **Main Question**: "민경아 나의 발렌타인이 되어줄래?" (Minkyung, will you be my Valentine?)
+- **Buttons**: "Yes" (좋아) and "No" (싫어).
+- **"No" Button Interaction**: Evades the cursor to a random location.
+- **"Yes" Button Interaction**: Grows as the cursor approaches the "No" button.
+- **Celebration**: "끼얏호우~" text and heart floating animations upon clicking "Yes".
+
+## 4. UI/UX Points
+- Pink, pastel tones, heart-centered design.
+- Smooth animations (ease-in-out, scale, opacity).
+- Responsive for mobile and desktop.
+
+## 5. Development Scope (MVP)
+- Single HTML file.
+- CSS animations.
+- JS event handling.

@@ -1,0 +1,68 @@
+/* Custom Animations that are cleaner in CSS */
+
+/* The .heart class is added dynamically by JS, so we keep it here or we'd need to add long tailwind strings in JS */
+.heart {
+    position: absolute;
+    color: #ff4d6d;
+    font-size: 1.5rem;
+    pointer-events: none;
+    animation: floatingHeart 3s ease-in forwards;
+    z-index: 50;
+}
+
+#no-btn {
+    transition: left 0.3s ease-out, top 0.3s ease-out, transform 0.2s, background-color 0.3s;
+}
+
+#yes-btn {
+    transition: transform 0.3s ease-out, background-color 0.3s;
+}
+
+@keyframes floatingHeart {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Re-implementing custom animations used in Tailwind classes if needed, 
+   but for now we used standard utility classes mostly. 
+   However, we referenced 'animate-fade-in-down' and 'animate-pop' in HTML comments/mental model 
+   but Tailwind doesn't have them by default. Let's add them as utility classes via @layer utilities logic 
+   OR just keep them as standard classes.
+   
+   Actually, in the HTML I used 'animate-fade-in-down' which doesn't exist in default Tailwind.
+   So I will define the standard CSS class for it here to match the HTML class name, 
+   OR I should have added it to tailwind config. 
+   
+   Let's just use standard CSS classes for these specific animations to keep it simple 
+   without over-engineering the tailwind config in the HTML script tag.
+*/
+
+.animate-fade-in-down {
+    animation: fadeInDown 1s ease-out;
+}
+
+.animate-pop {
+    animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}

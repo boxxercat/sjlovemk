@@ -1,0 +1,164 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": "1",
+        "title": "기본 프로젝트 구조 및 HTML 마크업 작성",
+        "description": "단일 HTML 파일 구조를 설정하고 기본 레이아웃을 작성합니다.",
+        "details": "index.html 파일을 생성하고 HTML5 표준에 맞춰 기본 구조를 잡습니다. '민경아 나의 발렌타인이 되어줄래?' 제목을 담을 h1 태그와 '좋아'(Yes), '싫어'(No) 버튼을 포함하는 컨테이너를 구성합니다. 웹 폰트(Gmarket Sans 등 부드러운 폰트) 링크를 추가합니다.",
+        "testStrategy": "브라우저에서 index.html을 열어 텍스트와 두 개의 버튼이 올바르게 표시되는지 확인합니다.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-06T01:12:48.431Z"
+      },
+      {
+        "id": "2",
+        "title": "CSS 스타일 가이드 및 기본 테마 적용",
+        "description": "핑크와 파스텔 톤의 로맨틱한 스타일을 적용합니다.",
+        "details": "Flexbox를 사용하여 컨텐츠를 화면 중앙에 배치합니다. 배경색(#ffeef0), 버튼 색상, 그림자 효과 등을 정의합니다. 버튼은 둥근 모서리와 부드러운 transition 효과를 가집니다. Responsive Design을 위해 max-width를 사용합니다.",
+        "testStrategy": "배경색과 버튼 스타일이 PRD의 디자인 요구사항과 일치하는지 시각적으로 검토합니다.",
+        "priority": "high",
+        "dependencies": [
+          "1"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-06T01:13:19.471Z"
+      },
+      {
+        "id": "3",
+        "title": "애니메이션 키프레임 정의",
+        "description": "하트 떠다니기 및 버튼 크기 변경을 위한 CSS 애니메이션을 작성합니다.",
+        "details": "@keyframes를 사용하여 하트가 위로 올라가며 사라지는 애니메이션(floatingHeart), 버튼이 커지는 효과 등을 정의합니다. transform: scale() 및 opacity 속성을 활용합니다.",
+        "testStrategy": "정의된 클래스를 임시로 요소에 적용하여 애니메이션이 매끄럽게 동작하는지 확인합니다.",
+        "priority": "medium",
+        "dependencies": [
+          "2"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-06T01:13:36.541Z"
+      },
+      {
+        "id": "4",
+        "title": "JavaScript DOM 셀렉터 및 상태 초기화",
+        "description": "JS에서 제어할 버튼 및 컨테이너 요소를 선택하고 초기 변수를 설정합니다.",
+        "details": "document.querySelector를 사용해 Yes/No 버튼을 참조합니다. Yes 버튼의 초기 크기를 저장할 변수를 선언합니다.",
+        "testStrategy": "콘솔 로그를 통해 모든 DOM 요소가 정상적으로 잡히는지 확인합니다.",
+        "priority": "medium",
+        "dependencies": [
+          "1"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-06T01:14:37.551Z"
+      },
+      {
+        "id": "5",
+        "title": "'No' 버튼 회피 로직 구현",
+        "description": "마우스 커서가 'No' 버튼에 접근할 때 버튼 위치를 랜덤하게 이동시킵니다.",
+        "details": "'mouseover' 이벤트를 'No' 버튼에 등록합니다. window.innerWidth와 innerHeight 내에서 버튼이 삐져나가지 않도록 계산하여 position: absolute의 top, left 값을 랜덤하게 변경하는 함수를 작성합니다.",
+        "testStrategy": "'No' 버튼에 마우스를 올릴 때마다 버튼이 잡히지 않고 다른 곳으로 도망가는지 테스트합니다.",
+        "priority": "high",
+        "dependencies": [
+          "4"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-06T01:15:11.458Z"
+      },
+      {
+        "id": "6",
+        "title": "'Yes' 버튼 확장 로직 구현",
+        "description": "'No' 버튼 상호작용 시 'Yes' 버튼이 점진적으로 커지도록 설정합니다.",
+        "details": "Task 5의 'No' 버튼 mouseover 이벤트 핸들러 내에서 'Yes' 버튼의 scale 값을 증가시키는 로직을 추가합니다. 일정 횟수 이상 도망가면 화면의 절반을 차지할 정도로 커지게 설계합니다.",
+        "testStrategy": "'No' 버튼을 피하려 할수록 'Yes' 버튼이 점점 커져서 클릭하기 쉬워지는지 확인합니다.",
+        "priority": "medium",
+        "dependencies": [
+          "5"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-06T01:15:47.020Z"
+      },
+      {
+        "id": "7",
+        "title": "'Yes' 클릭 시 축하 시퀀스 구현",
+        "description": "'Yes' 버튼 클릭 시 성공 메시지와 UI 변경을 처리합니다.",
+        "details": "'Yes' 버튼 클릭 시 기존 질문과 버튼을 숨기고(display: none), '끼얏호우~' 텍스트를 담은 메시지를 표시합니다. CSS 클래스 교체를 통해 구현합니다.",
+        "testStrategy": "'Yes' 버튼 클릭 후 화면 전환이 부드럽게 일어나는지 확인합니다.",
+        "priority": "high",
+        "dependencies": [
+          "4",
+          "6"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-06T01:16:38.864Z"
+      },
+      {
+        "id": "8",
+        "title": "하트 파티클 시스템 구현",
+        "description": "'Yes' 클릭 후 화면에 하트가 쏟아지는 효과를 추가합니다.",
+        "details": "JavaScript로 일정 간격마다 하트 이모지(❤️)를 담은 span 요소를 동적으로 생성합니다. 랜덤한 좌측 위치(left)를 부여하고 Task 3에서 만든 애니메이션을 적용한 뒤, 애니메이션 종료 후 DOM에서 제거합니다.",
+        "testStrategy": "성공 메시지가 뜰 때 하트들이 화면 전체에서 위로 솟아오르는지 확인합니다.",
+        "priority": "medium",
+        "dependencies": [
+          "3",
+          "7"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-06T01:19:21.821Z"
+      },
+      {
+        "id": "9",
+        "title": "반응형 웹 디자인 최적화",
+        "description": "모바일 기기에서도 버튼과 텍스트가 깨지지 않도록 조정합니다.",
+        "details": "Media Query를 사용하여 모바일 화면에서 폰트 크기를 조절합니다. 터치 이벤트 시 'No' 버튼의 회피 로직이 정상 작동하는지 확인합니다(touchstart 대응).",
+        "testStrategy": "Chrome 개발자 도구의 모바일 기기 모드에서 레이아웃 및 버튼 동작을 검증합니다.",
+        "priority": "medium",
+        "dependencies": [
+          "2",
+          "5"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-06T01:20:20.239Z"
+      },
+      {
+        "id": "10",
+        "title": "최종 폴리싱 및 배포 준비",
+        "description": "전체적인 코드 정리 및 버그 수정을 진행합니다.",
+        "details": "사용하지 않는 CSS/JS 코드를 제거합니다. 브라우저 간 호환성을 체크하고, 최종적으로 민경(대상자)의 이름을 확인합니다. 단일 HTML 파일로 번들링 가능하도록 경로를 확인합니다.",
+        "testStrategy": "전체 시나리오(No 회피 -> Yes 확장 -> 클릭 -> 축하 메시지)를 수차례 반복 테스트합니다.",
+        "priority": "low",
+        "dependencies": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2026-02-06T01:20:40.086Z"
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "lastModified": "2026-02-06T01:20:40.087Z",
+      "taskCount": 10,
+      "completedCount": 10,
+      "tags": [
+        "master"
+      ]
+    }
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Mini Web Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        love: {
+                            50: '#fff0f3',
+                            100: '#ffccd5',
+                            200: '#ffb3c1',
+                            300: '#ff8fa3',
+                            400: '#ff758f',
+                            500: '#ff4d6d',
+                            600: '#c9184a',
+                            700: '#a80038',
+                            800: '#800f2f',
+                            900: '#590d22',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Gowun Dodum"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-love-50 to-love-200 h-screen w-screen flex flex-col justify-center items-center overflow-hidden font-sans select-none">
+    
+    <div id="main-container" class="text-center transition-opacity duration-500 ease-in-out z-10 p-4">
+        <h1 id="question" class="text-3xl md:text-5xl font-bold text-love-600 mb-8 drop-shadow-sm animate-fade-in-down">
+            민경아 나의 발렌타인이 되어줄래?
+        </h1>
+        
+        <div class="flex justify-center items-center gap-6 md:gap-10 min-h-[100px] relative">
+            <button id="yes-btn" class="bg-love-500 text-white px-8 py-3 rounded-full text-xl md:text-2xl font-bold shadow-lg shadow-love-500/30 hover:bg-love-400 hover:scale-110 transition-all duration-300 transform active:scale-95 z-20 whitespace-nowrap">
+                좋아 💖
+            </button>
+            <button id="no-btn" class="bg-love-300 text-white px-8 py-3 rounded-full text-xl md:text-2xl font-bold shadow-md hover:bg-love-400 transition-all duration-300 z-20 whitespace-nowrap">
+                싫어 🙅‍♀️
+            </button>
+        </div>
+    </div>
+
+    <div id="celebration" class="hidden text-center z-20">
+        <h1 class="text-5xl md:text-7xl font-bold text-love-600 animate-pop drop-shadow-md mb-4">
+            🎉 끼얏호우 🎉
+        </h1>
+        <p class="text-2xl md:text-3xl text-love-500 font-bold animate-pulse">
+            Happy Valentine's Day! 💘
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
